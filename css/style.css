@@ -1,0 +1,567 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+}
+.nav-links li {
+  display: inline-block;
+  margin-left: 1rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.page-section {
+  min-height: 100vh;       /* 화면 높이만큼 최소 높이 */
+  box-sizing: border-box;  /* padding 포함 높이 계산 */
+  padding-top: 4rem;       /* 헤더 높이나 여백만큼 필요 시 여유 주기 */
+  padding-bottom: 4rem;    /* 섹션 내부 하단 여유 */
+}
+
+/* ① 배너 배경 & 레이아웃 */
+.main-header {
+  background-color: #E0E2DF;
+  /* 위쪽에 1.5rem 띄우고, 좌우는 자동 가운데 정렬 & 여백 1rem */
+  margin: 2rem auto 0;
+  width: calc(100% - 10rem);
+  /* 모서리 둥글게 */
+  border-radius: 12px;
+  /* 내부 패딩도 약간 조정 */
+  padding: 1.5rem 1.5rem;
+  /* 그림자(optional): 살짝 띄운 느낌 */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ② 로고 */
+.logo img {
+  height: 40px;
+}
+
+/* ③ 내비게이션 */
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+}
+.nav-menu li + li {
+  margin-left: 1.5rem;
+}
+.nav-menu a {
+  color: #555;           /* 짙은 그레이 톤 */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: calc(1rem + 0.5px);
+}
+
+/* ④ 로그인/가입 버튼 */
+.auth {
+  display: flex;
+  align-items: center;
+}
+.auth .login {
+  margin-right: 1rem;
+  color: #555;
+  text-decoration: none;
+  font-size: calc(0.95rem + 0.5px);
+}
+.auth .signup {
+  padding: 0.5rem 1.2rem;
+  background-color: #7d997b;  /* 짙은 그린 계열 */
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+  font-size: calc(1rem + 0.5px);
+}
+.auth .signup:hover {
+  background-color: #6f856c;
+}
+
+/* 1) READER 제목 */
+.intro-title {
+  font-size: 3rem;      /* 더 크게 */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* 2) Read+ Leader 부제 */
+.intro-subtitle {
+  font-size: 1.25rem;   /* 그대로 두거나 1rem 정도로 줄여도 OK */
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.intro-btn {
+  display: inline-block;         /* inline-block으로 크기 지정 가능 */
+  padding: 0.75rem 1.5rem;       /* 위아래 0.75rem, 좌우 1.5rem */
+  background-color: #6f856c;     /* 요청하신 녹색 계열 */
+  color: #fff;                   /* 흰 글자 */
+  text-decoration: none;         
+  border-radius: 8px;            /* 모서리 둥글게 */
+  font-weight: 500;
+  transition: background 0.2s;
+  margin-top: 1.5rem;
+}
+.intro-btn:hover {
+  background-color: #5e745c;     /* 살짝 진한 호버 색상(선택 사항) */
+}
+
+.intro-section {
+  max-width: 500px;
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  margin-left: 0rem;   
+  padding: 2rem 1rem;
+  background: #fff;                /* 흰 배경 */
+  border-radius: 12px;             /* 둥근 모서리 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* 그림자 효과 */
+  padding: 2rem;                   /* 기존 padding이 없다면 여유 주기 */
+  margin: 2rem 1rem;               /* 섹션 간 간격 확보 */
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* WRITER 섹션 */
+.writer-section {
+  max-width: 800px;         /* READER 섹션과 동일한 너비 */
+  margin: 2rem 0 2rem 1rem; /* 왼쪽 정렬: 상/하 2rem, 왼쪽 1rem */
+  background: #fff;               
+  border-radius: 12px;            
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem 1rem;
+}
+.writer-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.writer-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2rem;         /* 행간 1.5rem, 열간 2rem */
+}
+.writer-item {
+  flex: 1 1 calc(50% - 2rem); /* 두 칸씩 배치 */
+  display: flex;
+  align-items: center;
+}
+.writer-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.75rem;
+}
+.writer-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.features {
+  text-align: center;
+}
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.feature-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.feature-item {
+  flex: 1;
+  min-width: 250px;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.feature-item .icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 0.5rem;
+  background-size: contain;
+}
+
+.goals {
+  text-align: center;
+  margin-top: 2rem;
+}
+.goal-form input {
+  width: 60px;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.goal-form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #7d997b;
+  color: #fff;
+  cursor: pointer;
+}
+.goal-form button:hover {
+  background: #94a39a;
+}
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f1f1f1;
+  color: #555;
+  margin-top: 2rem;
+}
+
+
+/* 서브페이지(1) 추천 도서 섹션 */
+.recommend-section {
+  background-color: #E0E2DF;  /* 연한 녹색 배경 */
+  padding: 3rem 1rem;
+}
+.recommend-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 제목 */
+.recommend-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* 카드 리스트: 3개 나란히 */
+.recommend-list {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* 개별 카드 */
+.recommend-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  flex: 1 1 calc(33.333% - 1rem);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* 카드 이미지 */
+.recommend-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* 순위 & 제목 */
+.recommend-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+/* 저자 */
+.recommend-card .author {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 인용문 */
+.recommend-card .quote {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* 카드 내비 버튼 (←) */
+.card-nav.prev {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6f856c;
+  cursor: pointer;
+}
+
+/* 도서 탐색 버튼 */
+.explore-btn {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.75rem 2rem;
+  background-color: #6f856c;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.explore-btn:hover {
+  background-color: #5e745c;
+}
+
+/* —— 월간 독서기록 섹션 —— */
+.monthly-record-section {
+  background: #fff;
+  padding: 3rem 1rem;
+}
+.monthly-record-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.monthly-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+.monthly-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+/* 가로 스크롤 리스트 */
+.record-list {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+/* 스크롤바 숨기기 */
+.record-list::-webkit-scrollbar { display: none; }
+.record-list { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* 카드 공통 스타일 */
+.record-card {
+  flex: 0 0 300px;              /* 카드 너비 고정 */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: relative;
+}
+/* 홀수/짝수 배경색 번갈아 적용 */
+.record-card:nth-child(odd) {
+  background-color: #7d997b;
+  color: #fff;
+}
+.record-card:nth-child(even) {
+  background-color: #E0E2DF;
+  color: #222;
+}
+
+/* 아바타 */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* 인용문 */
+.quote {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+/* 작성자 이름/역할 */
+.author-name {
+  font-weight: bold;
+  margin: 0;
+}
+.author-role {
+  font-size: 0.85rem;
+  color: inherit;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* —— 우리들의 이야기 섹션 —— */
+
+.story-section .page-section {
+  /* 기존 padding-top:4rem; padding-bottom:4rem; */
+  padding-top: 2rem;    /* ← 4rem → 2rem */
+  padding-bottom: 2rem; /* ← 4rem → 2rem */
+}
+
+.story-section {
+  background-color: #E0E2DF;
+  padding: 1.5rem 1rem;
+}
+.story-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+/* 2단 그리드(.story-content) */
+.story-content {
+  display: flex;
+  gap: 2rem;
+}
+/* 반응형: 너비 768px 이하일 땐 세로 스택 */
+@media (max-width: 768px) {
+  .story-content {
+    flex-direction: column;
+  }
+}
+
+/* 좌측 피처링 아티클 */
+.featured-article {
+  flex: 0 0 60%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+.feat-img {
+  width: 100%;
+  display: block;
+}
+.feat-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0.5rem 1.5rem 0;
+}
+.feat-title {
+  font-size: 1.75rem;
+  margin: 0.3rem 1.5rem;
+  color: #222;
+}
+.feat-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 1.5rem 1rem;
+  color: #555;
+}
+.feat-author {
+  margin-top: auto;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #eee;
+}
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.75rem;
+}
+.author-info .author-name {
+  font-weight: bold;
+  margin: 0;
+}
+.author-info .author-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+/* 우측 어사이드 아티클 컨테이너 */
+.aside-articles {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+/* 각 작은 아티클 */
+.aside-article {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.aside-img {
+  width: 30%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.aside-meta {
+  font-size: 0.75rem;
+  color: #666;
+}
+.aside-title {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+  color: #222;
+}
+.aside-snippet {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+  flex: 1;
+}
+.aside-link {
+  font-size: 0.85rem;
+  color: #6f856c;
+  text-decoration: none;
+  align-self: flex-end;
+  margin-top: auto;
+}
+.aside-link:hover {
+  text-decoration: underline;
+}

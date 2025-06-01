@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>책 읽기 | ReadMaster</title>
+  <!-- 기존에 쓰던 CSS 파일을 그대로 불러옵니다 -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ======================= 상단 헤더 (메인페이지(1)와 동일) ======================= -->
+  <header class="main-header">
+    <div class="header-container">
+      <!-- 로고 -->
+      <div class="logo">
+        <img src="images/logo-tree.png" alt="ReadMaster 로고" />
+      </div>
+
+      <!-- 내비게이션 -->
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">reader란?</a></li>
+          <li><a href="books.html">책읽기</a></li> <!-- 현재 보고 있는 페이지 -->
+          <li><a href="#">이야기</a></li>
+          <li><a href="#">문의</a></li>
+        </ul>
+      </nav>
+
+      <!-- 로그인/가입 -->
+      <div class="auth">
+        <a href="#" class="login">로그인</a>
+        <a href="#" class="signup">가입</a>
+      </div>
+    </div>
+  </header>
+  <!-- ============================================================================ -->
+
+  <!-- ======================= 메인 컨텐츠 영역 ======================= -->
+  <main>
+    <!-- ====== 1) 책 읽기 (Reading Section) ====== -->
+    <section class="reading-section">
+      <div class="container">
+        <h1 class="section-title">책 읽기</h1>
+
+        <div class="reading-content">
+          <!-- ──── 왼쪽: 내가 읽고 있는 책 리스트 ──── -->
+          <div class="reading-list">
+            <!-- 예시 Book Item 1 -->
+            <div class="book-item">
+              <img src="images/book-placeholder1.jpg" alt="책 표지 1" class="book-cover"/>
+              <div class="book-info">
+                <h3 class="book-title">데미안</h3>
+                <p class="book-author">저자1</p>
+              </div>
+            </div>
+            <!-- 예시 Book Item 2 -->
+            <div class="book-item">
+              <img src="images/book-placeholder2.jpg" alt="책 표지 2" class="book-cover"/>
+              <div class="book-info">
+                <h3 class="book-title">모비 딕</h3>
+                <p class="book-author">저자2</p>
+              </div>
+            </div>
+            <!-- 예시 Book Item 3 -->
+            <div class="book-item">
+              <img src="images/book-placeholder3.jpg" alt="책 표지 3" class="book-cover"/>
+              <div class="book-info">
+                <h3 class="book-title">죄와 벌</h3>
+                <p class="book-author">저자3</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ──── 오른쪽: 독서 통계 박스 ──── -->
+          <aside class="reading-stats">
+            <h2 class="stats-title">독서 통계</h2>
+            <ul class="stats-list">
+              <li><span class="stats-label">권 수</span><span class="stats-value">5권</span></li>
+              <li><span class="stats-label">페이지</span><span class="stats-value">1,243페이지</span></li>
+              <li><span class="stats-label">시간</span><span class="stats-value">28시간</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <!-- ====== /책 읽기 ====== -->
+
+    <!-- ====== 2) 책 등록하기 (Registration Section) ====== -->
+    <section class="register-section">
+      <div class="container">
+        <h2 class="section-title">책 등록하기</h2>
+        <div class="register-box">
+          <form action="#" method="post" enctype="multipart/form-data" class="register-form">
+            <!-- 왼쪽 입력 필드 -->
+            <div class="form-left">
+              <div class="form-group">
+                <label for="title">제목</label>
+                <input type="text" id="title" name="title" placeholder="책 제목 입력" required />
+              </div>
+              <div class="form-group">
+                <label for="author">저자</label>
+                <input type="text" id="author" name="author" placeholder="저자 입력" required />
+              </div>
+              <div class="form-group">
+                <label for="tag">태그</label>
+                <input type="text" id="tag" name="tag" placeholder="태그 입력 (예: 소설, 경제)" />
+              </div>
+            </div>
+
+            <!-- 오른쪽 업로드 박스 -->
+            <div class="form-right">
+              <label for="cover-upload" class="cover-label">책 표지 업로드</label>
+              <input type="file" id="cover-upload" name="cover" accept="image/*" />
+              <div class="cover-preview">
+                <!-- 업로드 후 미리보기 이미지를 보여줄 자리 -->
+                <img src="images/cover-placeholder.png" alt="표지 미리보기" id="cover-image-preview" />
+              </div>
+            </div>
+
+            <!-- 등록 버튼 (가운데 정렬) -->
+            <div class="form-submit">
+              <button type="submit" class="submit-btn">등록하기</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- ====== /책 등록하기 ====== -->
+  </main>
+  <!-- ============================================================ -->
+
+  <!-- (필요하다면 하단 푸터를 복사하여 붙여넣으세요) -->
+  <footer class="site-footer">
+    <p>&copy; 2025 ReadMaster. All rights reserved.</p>
+  </footer>
+</body>
+</html>

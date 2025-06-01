@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이야기 | ReadMaster</title>
+  <!-- 이미 프로젝트에 있는 style.css 를 그대로 불러옵니다 -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ======================= 상단 헤더 (메인페이지(1)와 동일) ======================= -->
+  <header class="main-header">
+    <div class="header-container">
+      <!-- 로고 -->
+      <div class="logo">
+        <img src="images/logo-tree.png" alt="ReadMaster 로고" />
+      </div>
+
+      <!-- 내비게이션 -->
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">reader란?</a></li>
+          <li><a href="books.html">책읽기</a></li>
+          <li><a href="stories.html" class="active">이야기</a></li>
+          <li><a href="#">문의</a></li>
+        </ul>
+      </nav>
+
+      <!-- 로그인/가입 -->
+      <div class="auth">
+        <a href="#" class="login">로그인</a>
+        <a href="#" class="signup">가입</a>
+      </div>
+    </div>
+  </header>
+  <!-- ============================================================================ -->
+
+
+  <!-- ======================= 메인 컨텐츠 영역 ======================= -->
+  <main>
+
+    <!-- ====== 1) 이야기 목록 + 인기 이야기 ====== -->
+    <section class="story-section">
+      <div class="container">
+
+        <!-- (1-1) 페이지 타이틀 + 검색창 -->
+        <h1 class="story-title">이야기</h1>
+        <input type="search" class="story-search" placeholder="검색어를 입력하세요…" />
+
+        <!-- (1-2) 카테고리 탭 -->
+        <ul class="story-categories">
+          <li><a href="#" class="category active">전체</a></li>
+          <li><a href="#" class="category">리뷰</a></li>
+          <li><a href="#" class="category">토론</a></li>
+          <li><a href="#" class="category">Q&amp;A</a></li>
+        </ul>
+
+        <!-- (1-3) 콘텐츠 박스: 왼쪽–이야기 리스트, 오른쪽–인기 이야기 -->
+        <div class="story-content-wrapper">
+
+          <!-- ── 왼쪽: 이야기 리스트 ── -->
+          <div class="story-list">
+            <!-- 카드 1 (odd) -->
+            <div class="story-item">
+              <img src="images/avatar1.jpg" alt="박지성 프로필" class="story-avatar" />
+              <div class="story-info">
+                <p class="story-text">당신 인생의 이야기를 보고 느낀 것들</p>
+                <span class="story-author">박지성</span>
+              </div>
+            </div>
+            <!-- 카드 2 (even) -->
+            <div class="story-item">
+              <img src="images/avatar2.jpg" alt="김예원 프로필" class="story-avatar" />
+              <div class="story-info">
+                <p class="story-text">성장의 시간은 결코 헛되지 않는다</p>
+                <span class="story-author">김예원</span>
+              </div>
+            </div>
+            <!-- 카드 3 (odd) -->
+            <div class="story-item">
+              <img src="images/avatar3.jpg" alt="손흔인 프로필" class="story-avatar" />
+              <div class="story-info">
+                <p class="story-text">어떻게 하면 좋은 글을 쓸 수 있을까요?</p>
+                <span class="story-author">손흔인</span>
+              </div>
+            </div>
+            <!-- 카드 4 (even) -->
+            <div class="story-item">
+              <img src="images/avatar4.jpg" alt="김종국 프로필" class="story-avatar" />
+              <div class="story-info">
+                <p class="story-text">당신 인생의 이야기를 보고 느낀 것들</p>
+                <span class="story-author">김종국</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── 오른쪽: 인기 이야기 ── -->
+          <aside class="popular-stories">
+            <h2 class="popular-title">인기 이야기</h2>
+            <ul class="popular-list">
+              <li><a href="#">> 성장의 시간은 결코 헛되지 않는다</a></li>
+              <li><a href="#">> 어떻게 하면 좋은 글을 쓸 수 있을까요?</a></li>
+              <li><a href="#">> 당신 인생의 이야기를 보고 느낀 것들</a></li>
+            </ul>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+    <!-- ====== /이야기 목록 + 인기 이야기 ====== -->
+
+
+    <!-- ====== 2) 이야기 작성하기 폼 ====== -->
+    <section class="story-write-section">
+      <div class="container">
+        <h2 class="write-title">이야기 작성하기</h2>
+        <div class="write-box">
+          <form action="#" method="post" class="write-form">
+            <!-- 左측 입력 -->
+            <div class="write-left">
+              <div class="form-group">
+                <label for="post-title">글 제목</label>
+                <input type="text" id="post-title" name="title" placeholder="제목을 입력하세요" required />
+              </div>
+              <div class="form-group">
+                <label for="post-content">글 내용</label>
+                <textarea id="post-content" name="content" rows="6" placeholder="내용을 입력하세요" required></textarea>
+              </div>
+            </div>
+
+            <!-- 아래 등록 버튼 -->
+            <div class="write-submit">
+              <button type="submit" class="submit-btn">업로드하기</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- ====== /이야기 작성하기 폼 ====== -->
+
+
+  </main>
+  <!-- ============================================================ -->
+
+
+  <!-- ======================= 하단 Trusted 및 Footer (메인페이지와 동일) ======================= -->
+  <section class="trusted-section">
+    <div class="container">
+      <p class="trusted-label">Trusted by</p>
+      <div class="trusted-logos">
+        <img src="images/trusted1.png" alt="Allytask" />
+        <img src="images/trusted2.png" alt="Rotatus" />
+        <img src="images/trusted3.png" alt="Serenet" />
+        <img src="images/trusted4.png" alt="Globalnation" />
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="images/logo-tree.png" alt="ReadMaster 로고" />
+          <p class="footer-desc">
+            Velit officia ut cupidatat qui laboris aliqua do Lorem dolor eu.<br />
+            Excepteur quis mollit fugiat laborum incididunt ut sunt tempor magna.
+          </p>
+          <a href="#" class="btn live-chat-btn">Start Live Chat</a>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Features</h4>
+            <ul>
+              <li><a href="#">Beta access</a></li>
+              <li><a href="#">Main features</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Solutions</h4>
+            <ul>
+              <li><a href="#">Collaboration</a></li>
+              <li><a href="#">Engagement</a></li>
+              <li><a href="#">Satisfaction</a></li>
+              <li><a href="#">Talent</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Blogs & Articles</a></li>
+              <li><a href="#">Tutorials</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Follow our socials</h4>
+            <ul class="social-icons">
+              <li><a href="#"><img src="images/icon-twitter.svg" alt="Twitter" /></a></li>
+              <li><a href="#"><img src="images/icon-facebook.svg" alt="Facebook" /></a></li>
+              <li><a href="#"><img src="images/icon-instagram.svg" alt="Instagram" /></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <ul class="footer-legal">
+          <li><a href="#">Term of Conditions</a></li>
+          <li><a href="#">Privacy and Security</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2025 ReadMaster. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- ============================================================================================= -->
+
+</body>
+</html>

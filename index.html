@@ -1,268 +1,287 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>자기주도 독서 사이트</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- ====== 메인페이지(1) 시작 ====== -->
-  <header class="main-header ">
+  <!-- ====== 헤더 ====== -->
+  <header class="main-header">
     <div class="header-container">
-      <!-- 로고 -->
-      <div class="logo">
+      <!-- 왼쪽 로고 -->
+      <div class="logo left-logo">
+        <a href="./index.html">
         <img src="images/logo-tree.png" alt="ReadMaster 로고" />
+        </a>
       </div>
       <!-- 내비게이션 -->
       <nav class="nav-menu">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">reader란?</a></li>
-          <li><a href="#">책읽기</a></li>
-          <li><a href="#">이야기</a></li>
-          <li><a href="#">문의</a></li>
-        </ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./recommendations.html">reader란?</a></li>
+        <li><a href="./books.html">책읽기</a></li>
+        <li><a href="./stories.html">이야기</a></li>
+        <li><a href="#">문의</a></li>
+      </ul>
       </nav>
-      <!-- 로그인/가입 -->
-      <div class="auth">
-        <a href="#" class="login">로그인</a>
-        <a href="#" class="signup">가입</a>
-      </div>
+      <!-- 오른쪽 로그인/가입 -->
+        <div class="auth">
+          <a href="#" class="login">로그인</a>
+          <a href="#" class="signup">가입</a>
+        </div>
     </div>
   </header>
 
+  <!-- ====== 메인 콘텐츠 ====== -->
   <main>
-    <!-- READER 섹션 -->
+    <!-- 1. READER 섹션 -->
     <section class="intro-section">
-      <h1 class="intro-title">READER</h1>
-      <h2 class="intro-subtitle">Read+ Leader</h2>
-      <p class="intro-text">
-        "읽고, 해석하고, 남기고, 연결하는 나만의 독서 여정.<br>
-        기록이 버겁게 느껴지는 정년들을 위한,<br>
-        작지만 선명한 초록 불씨가 되어줄 수 있다면."
-      </p>
-      <a href="books.html" class="intro-btn">독서 시작</a>
-    </section>
-
-    <!-- WRITER 섹션 시작 -->
-    <section class="writer-section">
-      <h2 class="writer-title">최근 인기 있는 라이터</h2>
-      <div class="writer-list">
-        <div class="writer-item">
-          <img src="images/writer1.jpg" alt="손민수">
-          <p>손민수</p>
+      <div class="intro-content">
+        <div class="intro-text-wrap">
+          <h1 class="intro-title">READER</h1>
+          <h2 class="intro-subtitle">Read+ Leader</h2>
+          <p class="intro-text">
+            "읽고, 해석하고, 남기고, 연결하는 나만의 독서 여정.<br>
+            기록이 버겁게 느껴지는 청년들을 위한,<br>
+            작지만 선명한 초록 불씨가 되어줄 수 있다면."
+          </p>
+          <a href="books.html" class="intro-btn">독서 시작</a>
         </div>
-        <div class="writer-item">
-          <img src="images/writer2.jpg" alt="박지성">
-          <p>박지성</p>
-        </div>
-        <div class="writer-item">
-          <img src="images/writer3.jpg" alt="김예원">
-          <p>김예원</p>
-        </div>
-        <div class="writer-item">
-          <img src="images/writer4.jpg" alt="이소은">
-          <p>이소은</p>
+        <div class="intro-image-wrap">
+          <img src="images/intro-tree.png" alt="큰 나무 일러스트" class="intro-tree" />
         </div>
       </div>
     </section>
-    <!-- WRITER 섹션 끝 -->
-  <!-- ====== 메인페이지(1) 끝 ====== -->
 
-    <!-- ====== 서브페이지(1): 추천 도서 섹션 시작 ====== -->
-  <section class="recommend-section page-section">
-    <div class="container">
-      <h2 class="recommend-title">추천 도서</h2>
-
-      <div class="recommend-list">
-        <!-- 1위 -->
-        <div class="recommend-card">
-          <img src="images/book1.jpg" alt="파리의 심리학 카페" />
-          <h3>1위: 파리의 심리학 카페</h3>
-          <p class="author">저자</p>
-          <p class="quote">
-            "심리학 이론을 일상의 언어로 풀어내며, 마치 파리의 작은 카페에서 조용히 사유하는 듯한 여유를 선물하는 책입니다."
-          </p>
-          <button class="card-nav prev">&larr;</button>
-        </div>
-
-        <!-- 2위 -->
-        <div class="recommend-card">
-          <img src="images/book2.jpg" alt="따박따박 경제상식" />
-          <h3>2위: 따박따박 경제상식</h3>
-          <p class="author">저자</p>
-          <p class="quote">
-            "어려운 경제 개념도 귀엽고 친숙한 그림과 함께라면 쏙쏙! 초보자도 부담 없이 읽으며 경제의 흐름을 이해할 수 있어요."
-          </p>
-          <button class="card-nav prev">&larr;</button>
-        </div>
-
-        <!-- 3위 -->
-        <div class="recommend-card">
-          <img src="images/book3.jpg" alt="구의 증명" />
-          <h3>3위: 구의 증명</h3>
-          <p class="author">저자</p>
-          <p class="quote">
-            "청춘의 고민과 성장통을 세밀하게 그려낸 소설로, 묵직한 문장 속에서 진심이 조용히 파고드는 작품입니다."
-          </p>
-          <button class="card-nav prev">&larr;</button>
-        </div>
-      </div>
-
-      <a href="recommendations.html" class="btn explore-btn">도서 탐색</a>
-    </div>
-  </section>
-  <!-- ====== 서브페이지(1) 끝 ====== -->
-
-    <!-- ====== 서브페이지(2): 월간 독서기록 ====== -->
-  <section class="monthly-record-section page-section">
-    <div class="container">
-      <h2 class="monthly-title">월간 독서기록</h2>
-      <p class="monthly-subtitle">대충 명언</p>
-
-      <div class="record-list">
-        <!-- 카드 1 -->
-        <div class="record-card">
-          <img src="images/avatar1.jpg" alt="김철수" class="avatar"/>
-          <p class="quote">
-            “조용한 밤, 책장을 넘길 때마다 마음속 깊은 곳이 울리는 기분이었다. 한 문장, 한 문장이 나를 오래 붙잡는다.”
-          </p>
-          <p class="author-name">김철수</p>
-          <p class="author-role">감성형 독자</p>
-        </div>
-
-        <!-- 카드 2 -->
-        <div class="record-card">
-          <img src="images/avatar2.jpg" alt="신형만" class="avatar"/>
-          <p class="quote">
-            “이번 달엔 자기개발서 3권 완독 완료. 실천할 수 있는 팁 몇 가지는 따로 정리했고, 다음 달엔 경제 분야로 넘어간다.”
-          </p>
-          <p class="author-name">신형만</p>
-          <p class="author-role">목표지향형 독자</p>
-        </div>
-
-        <!-- 카드 3 -->
-        <div class="record-card">
-          <img src="images/avatar3.jpg" alt="오달수" class="avatar"/>
-          <p class="quote">
-            “구성 면에서는 조금 아쉬운 부분도 있었지만, 저자의 관점 자체는 매우 흥미로웠다. 근거 자료와 사례 분석이 논리적으로 이어져서 머릿속에서 구조화되는 느낌.”
-          </p>
-          <p class="author-name">오달수</p>
-          <p class="author-role">분석형 독자</p>
-        </div>
-
-        <!-- 카드 4 -->
-        <div class="record-card">
-          <img src="images/avatar4.jpg" alt="심미영" class="avatar"/>
-          <p class="quote">
-            “바람 불던 오후, 이 책의 문장 하나하나가 내 마음에 스며들었다. 마치 오래된 친구와 나누는 대화처럼.”
-          </p>
-          <p class="author-name">심미영</p>
-          <p class="author-role">감성형 독자</p>
-        </div>
-
-        <!-- 카드 5 -->
-        <div class="record-card">
-          <img src="images/avatar5.jpg" alt="박지성" class="avatar"/>
-          <p class="quote">
-            “짧지만 임팩트 있는 문장들이 많아, 버스 안에서도 틈틈이 읽기 좋았다. 다음 달도 이 시리즈 계속 읽을 것 같다.”
-          </p>
-          <p class="author-name">박지성</p>
-          <p class="author-role">실용형 독자</p>
-        </div>
-
-        <!-- 카드 6 -->
-        <div class="record-card">
-          <img src="images/avatar6.jpg" alt="한예원" class="avatar"/>
-          <p class="quote">
-            “이 달의 마지막 밤에 읽은 문장이 아직도 머릿속에 맴돈다. 기록해 두지 않으면 잊힐 것 같은 마음에 펜을 들게 했다.”
-          </p>
-          <p class="author-name">한예원</p>
-          <p class="author-role">기록형 독자</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ====== /서브페이지(2) ====== -->
-
-  <!-- ====== 서브페이지(3): 우리들의 이야기 ====== -->
-  <section class="story-section page-section">
-    <div class="container">
-      <h2 class="story-title">우리들의 이야기</h2>
-
-      <div class="story-content">
-        <!-- 좌측: 피처링 아티클 -->
-        <article class="featured-article">
-          <img src="images/story-feature.jpg" alt="책을 읽는다는 것" class="feat-img"/>
-
-          <div class="feat-meta">5 Min read</div>
-          <h3 class="feat-title">책을 읽는다는 것</h3>
-          <p class="feat-desc">
-            단순히 활자를 눈으로 쫓는 일일까요? 아니면 마음을 움직이는 일일까요?…
-          </p>
-          <div class="feat-author">
-            <img src="images/author1.jpg" alt="김영자" class="author-avatar"/>
-            <div class="author-info">
-              <p class="author-name">김영자</p>
-              <p class="author-date">Monday, 12 Sep 2024</p>
-            </div>
+    <!-- 2. WRITER 섹션 -->
+    <section class="writer-section page-section">
+      <div class="container">
+        <h2 class="writer-title">최근 인기 있는 라이터</h2>
+        <div class="writer-list">
+          <div class="writer-item">
+            <img src="images/writer1.jpg" alt="한강" />
+            <p>한강</p>
           </div>
-        </article>
-
-        <!-- 우측: 어사이드 아티클 3개 -->
-        <div class="aside-articles">
-          <article class="aside-article">
-            <img src="images/story2.jpg" alt="다들 독서 습관은 어떻게..." class="aside-img"/>
-            <div class="aside-meta">5 Min read</div>
-            <h4 class="aside-title">다들 독서 습관은 어떻게 키우시나요?</h4>
-            <p class="aside-snippet">
-              독서를 시작하려 해도 마음처럼 쉽지 않죠. 매번 책을 펼치고도 금방 멈춘다면…
-            </p>
-            <a class="continue-link" href="stories.html">Continue reading</a>
-          </article>
-
-          <article class="aside-article">
-            <img src="images/story3.jpg" alt="ADHD를 위한 책 추천 드립니다" class="aside-img"/>
-            <div class="aside-meta">5 Min read</div>
-            <h4 class="aside-title">ADHD를 위한 책 추천 드립니다</h4>
-            <p class="aside-snippet">
-              집중이 어려운 당신을 위한 맞춤형 독서 가이드. 이 글에서는 부담 없이 읽을…
-            </p>
-            <a class="continue-link" href="stories.html">Continue reading</a>
-          </article>
-
-          <article class="aside-article">
-            <img src="images/story4.jpg" alt="요즘 MZ들의 힙한 독서법" class="aside-img"/>
-            <div class="aside-meta">5 Min read</div>
-            <h4 class="aside-title">요즘 MZ들의 힙한 독서법</h4>
-            <p class="aside-snippet">
-              MZ세대의 독서는 조금 다릅니다. 카페에서, 앱으로, 오디오북으로—이젠…
-            </p>
-            <a class="continue-link" href="stories.html">Continue reading</a>
-          </article>
+          <div class="writer-item">
+            <img src="images/writer2.jpg" alt="양귀자" />
+            <p>양귀자</p>
+          </div>
+          <div class="writer-item">
+            <img src="images/writer3.jpg" alt="유시민" />
+            <p>유시민</p>
+          </div>
+          <div class="writer-item">
+            <img src="images/writer4.jpg" alt="김영하" />
+            <p>김영하</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- ====== /서브페이지(3) ====== -->
+    </section>
 
+    <!-- 3. 추천 도서 (서브페이지(1) 미리보기) -->
+    <section class="recommend-section page-section">
+      <div class="container">
+        <h2 class="recommend-title">추천 도서</h2>
+        <div class="recommend-list">
+        </div>
 
-    <!-- 독서 목표 -->
-    <section id="goals" class="goals">
-      <h2>독서 목표 설정</h2>
-      <form id="goal-form" class="goal-form">
-        <input type="number" id="goal-input" placeholder="권 수 입력" required>
-        <button type="submit">목표 설정</button>
-      </form>
-      <p id="goal-message"></p>
+        <a href="recommendations.html" class="btn explore-btn">도서 탐색</a>
+      </div>
+    </section>
+
+    <!-- 4. 월간 독서기록 (서브페이지(2) 미리보기) -->
+    <section class="monthly-record-section page-section">
+      <div class="container">
+        <h2 class="monthly-title">월간 독서기록</h2>
+        <p class="monthly-subtitle">대충 명언</p>
+        <div class="record-list">
+          <!-- 카드 1 -->
+          <div class="record-card">
+            <img src="images/avatar1.png" alt="김철수" class="avatar" />
+            <p class="quote">
+              “조용한 밤, 책장을 넘길 때마다 마음속 깊은 곳이 울리는 기분이었다. 한 문장, 한 문장이 나를 오래 붙잡는다.”
+            </p>
+            <p class="author-name">김철수</p>
+            <p class="author-role">감성형 독자</p>
+          </div>
+          <!-- 카드 2 -->
+          <div class="record-card">
+            <img src="images/avatar2.png" alt="신형만" class="avatar" />
+            <p class="quote">
+              “이번 달엔 자기개발서 3권 완독 완료. 실천할 수 있는 팁 몇 가지는 따로 정리했고, 다음 달엔 경제 분야로 넘어간다.”
+            </p>
+            <p class="author-name">신형만</p>
+            <p class="author-role">목표지향형 독자</p>
+          </div>
+          <!-- 카드 3 -->
+          <div class="record-card">
+            <img src="images/avatar3.png" alt="오달수" class="avatar" />
+            <p class="quote">
+              “구성 면에서는 조금 아쉬운 부분도 있었지만, 저자의 관점 자체는 매우 흥미로웠다. 근거 자료와 사례 분석이 논리적으로 이어져서 머릿속에서 구조화되는 느낌.”
+            </p>
+            <p class="author-name">오달수</p>
+            <p class="author-role">분석형 독자</p>
+          </div>
+          <!-- 카드 4 -->
+          <div class="record-card">
+            <img src="images/avatar4.png" alt="심미영" class="avatar" />
+            <p class="quote">
+              “바람 불던 오후, 이 책의 문장 하나하나가 내 마음에 스며들었다. 마치 오래된 친구와 나누는 대화처럼.”
+            </p>
+            <p class="author-name">심미영</p>
+            <p class="author-role">감성형 독자</p>
+          </div>
+          <!-- 카드 5 -->
+          <div class="record-card">
+            <img src="images/avatar5.png" alt="박지성" class="avatar" />
+            <p class="quote">
+              “짧지만 임팩트 있는 문장들이 많아, 버스 안에서도 틈틈이 읽기 좋았다. 다음 달도 이 시리즈 계속 읽을 것 같다.”
+            </p>
+            <p class="author-name">박지성</p>
+            <p class="author-role">실용형 독자</p>
+          </div>
+          <!-- 카드 6 -->
+          <div class="record-card">
+            <img src="images/avatar6.png" alt="한예원" class="avatar" />
+            <p class="quote">
+              “이 달의 마지막 밤에 읽은 문장이 아직도 머릿속에 맴돈다. 기록해 두지 않으면 잊힐 것 같은 마음에 펜을 들게 했다.”
+            </p>
+            <p class="author-name">한예원</p>
+            <p class="author-role">기록형 독자</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 우리들의 이야기 (서브페이지(3) 미리보기) -->
+    <section class="story-section page-section">
+      <div class="container">
+        <h2 class="story-title">우리들의 이야기</h2>
+        <div class="story-content">
+          <!-- 좌측 피처링 아티클 -->
+          <article class="featured-article">
+            <img src="images/story-feature.png" alt="책을 읽는다는 것" class="feat-img" />
+            <div class="feat-meta">5 Min read</div>
+            <h3 class="feat-title">책을 읽는다는 것</h3>
+            <p class="feat-desc">
+              단순히 활자를 눈으로 쫓는 일일까요? 아니면 마음을 움직이는 일일까요?…
+            </p>
+            <div class="feat-author">
+              <img src="images/author1.png" alt="김영자" class="author-avatar" />
+              <div class="author-info">
+                <p class="author-name">김영자</p>
+                <p class="author-date">Monday, 12 Sep 2024</p>
+              </div>
+            </div>
+          </article>
+          <!-- 우측 어사이드 아티클 3개 -->
+          <div class="aside-articles">
+            <article class="aside-article">
+              <img src="images/story2.png" alt="다들 독서 습관은 어떻게..." class="aside-img" />
+              <div class="aside-text">
+              <div class="aside-meta">5 Min read</div>
+              <h4 class="aside-title">다들 독서 습관은 어떻게 키우시나요?</h4>
+              <p class="aside-snippet">
+                독서를 시작하려 해도 마음처럼 쉽지 않죠. 매번 책을 펼치고도 금방 멈춘다면…
+              </p>
+              <a class="continue-link" href="stories.html">Continue reading</a>
+              </div>
+            </article>
+            <article class="aside-article">
+              <img src="images/story3.png" alt="ADHD를 위한 책 추천 드립니다" class="aside-img" />
+              <div class="aside-text">
+              <div class="aside-meta">5 Min read</div>
+              <h4 class="aside-title">ADHD를 위한 책 추천 드립니다</h4>
+              <p class="aside-snippet">
+                집중이 어려운 당신을 위한 맞춤형 독서 가이드. 이 글에서는 부담 없이 읽을…
+              </p>
+              <a class="continue-link" href="stories.html">Continue reading</a>
+              </div>
+            </article>
+            <article class="aside-article">
+              <img src="images/story4.png" alt="요즘 MZ들의 힙한 독서법" class="aside-img" />
+              <div class="aside-text">
+              <div class="aside-meta">5 Min read</div>
+              <h4 class="aside-title">요즘 MZ들의 힙한 독서법</h4>
+              <p class="aside-snippet">
+                MZ세대의 독서는 조금 다릅니다. 카페에서, 앱으로, 오디오북으로—이젠…
+              </p>
+              <a class="continue-link" href="stories.html">Continue reading</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 신뢰 마크 & 푸터 (예시) -->
+    <section class="trusted-section page-section">
+      <div class="container">
+        <h3 class="trusted-title">Trusted by</h3>
+        <div class="trusted-logos">
+          <img src="images/logo1.png" alt="Allytask" />
+          <img src="images/logo2.png" alt="Rotatus" />
+          <img src="images/logo3.png" alt="Serenet" />
+          <img src="images/logo4.png" alt="Globalnation" />
+        </div>
+      </div>
     </section>
   </main>
+
+  <!-- ====== 푸터 ====== -->
   <footer class="site-footer">
-    <p>&copy; 2025 ReadMaster</p>
+    <div class="container footer-container">
+      <div class="footer-left">
+        <img src="images/logo-tree.png" alt="ReadMaster 로고" class="footer-logo" />
+        <p class="footer-desc">
+          Velit officia ut cupidatat qui laboris aliquip do Lorem dolor eu.<br>
+          Excepteur quis mollit fugiat laboris ut sunt tempor magna.
+        </p>
+        <a href="#" class="live-chat-btn">Start Live Chat</a>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Features</h4>
+          <ul>
+            <li><a href="#">Beta access</a></li>
+            <li><a href="#">Main features</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="#">Collaboration</a></li>
+            <li><a href="#">Engagement</a></li>
+            <li><a href="#">Satisfaction</a></li>
+            <li><a href="#">Talent</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Blogs & Article</a></li>
+            <li><a href="#">Tutorials</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Follow our socials</h4>
+          <ul class="social-icons">
+            <li><a href="#"><img src="images/icon-twitter.png" alt="Twitter" /></a></li>
+            <li><a href="#"><img src="images/icon-instagram.png" alt="Instagram" /></a></li>
+            <li><a href="#"><img src="images/icon-facebook.png" alt="Facebook" /></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="#">Term of Conditions</a>
+      <span>Privacy and Security</span>
+    </div>
+    <div class="made-with">Made with <span class="visily-logo">Visily</span></div>
   </footer>
   <script src="js/app.js"></script>
 </body>
 </html>
-

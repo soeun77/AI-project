@@ -1,46 +1,54 @@
+/* --------------------------------------------
+   1. 공통 스타일 (리셋 + 기본 설정)
+-------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body {
+
+html, body {
   font-family: 'Noto Sans KR', sans-serif;
   color: #333;
-  line-height: 1.6;
+  background-color: #fff;
+  line-height: 1.5;
 }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* 링크 기본 스타일 제거 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 버튼 기본 스타일 제거 */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 컨테이너 공통 넓이 설정 */
+.container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-}
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.nav-links {
-  list-style: none;
-}
-.nav-links li {
-  display: inline-block;
-  margin-left: 1rem;
-}
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
+  padding: 0 1rem;
 }
 
+/* 섹션 공통 패딩 */
 .page-section {
-  min-height: 100vh;       /* 화면 높이만큼 최소 높이 */
-  box-sizing: border-box;  /* padding 포함 높이 계산 */
-  padding-top: 4rem;       /* 헤더 높이나 여백만큼 필요 시 여유 주기 */
-  padding-bottom: 4rem;    /* 섹션 내부 하단 여유 */
+  padding: 4rem 0;
 }
 
-/* ① 배너 배경 & 레이아웃 */
+/* 제목 스타일 */
+h2, h3, h4 {
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------
+   2. 헤더 스타일
+-------------------------------------------- */
 .main-header {
   background-color: #E0E2DF;
   /* 위쪽에 1.5rem 띄우고, 좌우는 자동 가운데 정렬 & 여백 1rem */
@@ -52,233 +60,198 @@ body {
   padding: 1.5rem 1.5rem;
   /* 그림자(optional): 살짝 띄운 느낌 */
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  height: 80px;
   display: flex;
   align-items: center;
+}
+
+.header-container {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* ② 로고 */
-.logo img {
-  height: 150px;   /* 기존 40px → 60px */
-  width: auto;    /* 비율 유지 */
+/* 왼쪽 로고 */
+.left-logo img {
+  margin: 1rem auto 0;
+  width: 100px;
+  height: auto;
 }
 
-/* ③ 내비게이션 */
+/* 내비게이션 */
 .nav-menu ul {
   display: flex;
+  gap: 2rem;
   list-style: none;
 }
-.nav-menu li + li {
-  margin-left: 1.5rem;
-}
-.nav-menu a {
-  color: #555;           /* 짙은 그레이 톤 */
-  text-decoration: none;
+
+.nav-menu ul li a {
+  color: #666;
   font-weight: 500;
-  font-size: calc(1rem + 0.5px);
+  transition: color 0.2s;
 }
 
-/* ④ 로그인/가입 버튼 */
+.nav-menu ul li a:hover {
+  color: #333;
+}
+
+/* 로그인/가입 */
+.right-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .auth {
   display: flex;
   align-items: center;
-}
-.auth .login {
-  margin-right: 1rem;
-  color: #555;
-  text-decoration: none;
-  font-size: calc(0.95rem + 0.5px);
-}
-.auth .signup {
-  padding: 0.5rem 1.2rem;
-  background-color: #7d997b;  /* 짙은 그린 계열 */
-  color: #fff;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.2s;
-  font-size: calc(1rem + 0.5px);
-}
-.auth .signup:hover {
-  background-color: #6f856c;
+  gap: 1rem;
 }
 
-/* 1) READER 제목 */
+.auth .login {
+  color: #999;
+  transition: color 0.2s;
+}
+
+.auth .login:hover {
+  color: #555;
+}
+
+.auth .signup {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background-color: #6f856c;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.auth .signup:hover {
+  background-color: #5e745b;
+}
+
+/* --------------------------------------------
+   3. READER 섹션 스타일
+-------------------------------------------- */
+.intro-section {
+  background-color: #fff;
+  padding: 4rem 1rem;
+}
+
+.intro-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.intro-text-wrap {
+  flex: 1 1 400px;
+  max-width: 600px;
+  margin-left: 20rem;
+}
+
 .intro-title {
-  font-size: 3rem;      /* 더 크게 */
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
-/* 2) Read+ Leader 부제 */
 .intro-subtitle {
-  font-size: 1.25rem;   /* 그대로 두거나 1rem 정도로 줄여도 OK */
-  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.intro-text {
+  font-size: 1rem;
   color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .intro-btn {
-  display: inline-block;         /* inline-block으로 크기 지정 가능 */
-  padding: 0.75rem 1.5rem;       /* 위아래 0.75rem, 좌우 1.5rem */
-  background-color: #6f856c;     /* 요청하신 녹색 계열 */
-  color: #fff;                   /* 흰 글자 */
-  text-decoration: none;         
-  border-radius: 8px;            /* 모서리 둥글게 */
-  font-weight: 500;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: #6f856c;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1rem;
   transition: background 0.2s;
-  margin-top: 1.5rem;
 }
+
 .intro-btn:hover {
-  background-color: #5e745c;     /* 살짝 진한 호버 색상(선택 사항) */
+  background-color: #5e745b;
 }
 
-.intro-section {
-  max-width: 500px;
-  margin-top: 2rem;
-  margin-right: auto;
-  margin-bottom: 2rem;
-  margin-left: 0rem;   
-  padding: 2rem 1rem;
-  background: #fff;                /* 흰 배경 */
-  border-radius: 12px;             /* 둥근 모서리 */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* 그림자 효과 */
-  padding: 2rem;                   /* 기존 padding이 없다면 여유 주기 */
-  margin: 2rem 1rem;               /* 섹션 간 간격 확보 */
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+/* 큰 나무 이미지 */
+.intro-image-wrap {
+  flex: 1 1 400px;
+  text-align: center;
 }
 
-/* WRITER 섹션 */
+.intro-tree {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: inline-block;
+}
+
+/* --------------------------------------------
+   4. WRITER 섹션 스타일
+-------------------------------------------- */
 .writer-section {
-  max-width: 800px;         /* READER 섹션과 동일한 너비 */
-  margin: 2rem 0 2rem 1rem; /* 왼쪽 정렬: 상/하 2rem, 왼쪽 1rem */
-  background: #fff;               
-  border-radius: 12px;            
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  margin: 2rem 1rem;
+  background-color: #fff;
 }
+
 .writer-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
+
 .writer-list {
   display: flex;
+  gap: 2rem;
   flex-wrap: wrap;
-  gap: 1.5rem 2rem;         /* 행간 1.5rem, 열간 2rem */
 }
+
 .writer-item {
-  flex: 1 1 calc(50% - 2rem); /* 두 칸씩 배치 */
-  display: flex;
-  align-items: center;
+  flex: 1 1 200px;
+  text-align: center;
 }
+
 .writer-item img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
-  margin-right: 0.75rem;
+  border-radius: 50%;
+  margin-bottom: 0.75rem;
 }
+
 .writer-item p {
-  margin: 0;
   font-size: 1rem;
   color: #333;
 }
 
-
-main {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-.features {
-  text-align: center;
-}
-.features h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-.feature-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.feature-item {
-  flex: 1;
-  min-width: 250px;
-  margin: 1rem;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-.feature-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.feature-item .icon {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto 0.5rem;
-  background-size: contain;
-}
-
-.goals {
-  text-align: center;
-  margin-top: 2rem;
-}
-.goal-form input {
-  width: 60px;
-  padding: 0.5rem;
-  margin-right: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-.goal-form button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  background: #7d997b;
-  color: #fff;
-  cursor: pointer;
-}
-.goal-form button:hover {
-  background: #94a39a;
-}
-.site-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #f1f1f1;
-  color: #555;
-  margin-top: 2rem;
-}
-
-
-/* 서브페이지(1) 추천 도서 섹션 */
+/* --------------------------------------------
+   5. 추천 도서 섹션 스타일
+-------------------------------------------- */
 .recommend-section {
-  background-color: #E0E2DF;  /* 연한 녹색 배경 */
-  padding: 3rem 1rem;
-}
-.recommend-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  background-color: #E0E2DF;
 }
 
-/* 제목 */
 .recommend-title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #333;
   margin-bottom: 2rem;
 }
 
-/* 카드 리스트: 3개 나란히 */
 .recommend-list {
   display: flex;
   gap: 1.5rem;
@@ -286,17 +259,15 @@ main {
   flex-wrap: wrap;
 }
 
-/* 개별 카드 */
 .recommend-card {
-  background: #fff;
+  flex: 1 1 calc(33.333% - 1rem);
+  background-color: #fff;
   border-radius: 12px;
   padding: 1.5rem;
-  position: relative;
-  flex: 1 1 calc(33.333% - 1rem);
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: relative;
 }
 
-/* 카드 이미지 */
 .recommend-card img {
   width: 100%;
   height: auto;
@@ -304,41 +275,43 @@ main {
   margin-bottom: 1rem;
 }
 
-/* 순위 & 제목 */
 .recommend-card h3 {
-  margin: 0 0 0.5rem;
   font-size: 1.25rem;
-  color: #222;
+  margin-bottom: 0.5rem;
 }
 
-/* 저자 */
 .recommend-card .author {
-  margin: 0 0 0.75rem;
   font-size: 0.9rem;
   color: #666;
+  margin-bottom: 0.75rem;
 }
 
-/* 인용문 */
 .recommend-card .quote {
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 0.95rem;
   color: #555;
-  margin-bottom: 2rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
 }
 
-/* 카드 내비 버튼 (←) */
-.card-nav.prev {
+.recommend-card .card-nav {
   position: absolute;
+  left: 1rem;
   bottom: 1rem;
-  left: 1.5rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: #6f856c;
-  cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: background 0.2s;
 }
 
-/* 도서 탐색 버튼 */
+.recommend-card .card-nav:hover {
+  background-color: #f0f0f0;
+}
+
 .explore-btn {
   display: block;
   margin: 2rem auto 0;
@@ -346,162 +319,143 @@ main {
   background-color: #6f856c;
   color: #fff;
   border-radius: 8px;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
+  text-align: center;
+  width: 200px;
   transition: background 0.2s;
 }
+
 .explore-btn:hover {
-  background-color: #5e745c;
+  background-color: #5e745b;
 }
 
-/* —— 월간 독서기록 섹션 —— */
+/* --------------------------------------------
+   6. 월간 독서기록 섹션 스타일
+-------------------------------------------- */
 .monthly-record-section {
-  background: #fff;
-  padding: 3rem 1rem;
+  background-color: #fff;
 }
-.monthly-record-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+
 .monthly-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #222;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
+
 .monthly-subtitle {
   font-size: 1rem;
   color: #666;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/* 가로 스크롤 리스트 */
 .record-list {
   display: flex;
-  gap: 1rem;
+  flex-wrap: nowrap;
   overflow-x: auto;
-  padding-bottom: 1rem;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 1rem 0;
 }
-/* 스크롤바 숨기기 */
-.record-list::-webkit-scrollbar { display: none; }
-.record-list { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* 카드 공통 스타일 */
 .record-card {
-  flex: 0 0 300px;              /* 카드 너비 고정 */
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  position: relative;
-}
-/* 홀수/짝수 배경색 번갈아 적용 */
-.record-card:nth-child(odd) {
-  background-color: #7d997b;
-  color: #fff;
-}
-.record-card:nth-child(even) {
+  flex: 0 0 280px;
   background-color: #E0E2DF;
-  color: #222;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* 아바타 */
-.avatar {
-  width: 40px;
-  height: 40px;
+.record-card img.avatar {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
 }
 
-/* 인용문 */
-.quote {
-  font-size: 0.9rem;
+.record-card .quote {
+  font-size: 0.95rem;
+  color: #000;
   line-height: 1.4;
+  text-align: center;
   margin-bottom: 1rem;
 }
 
-/* 작성자 이름/역할 */
-.author-name {
+.record-card .author-name {
   font-weight: bold;
-  margin: 0;
+  color: #000;
+  margin-bottom: 0.25rem;
+  text-align: center;
 }
-.author-role {
+
+.record-card .author-role {
   font-size: 0.85rem;
-  color: inherit;
-  opacity: 0.8;
-  margin: 0;
+  color: #0f0f0f;
+  text-align: center;
 }
 
-/* —— 우리들의 이야기 섹션 —— */
-
-.story-section .page-section {
-  /* 기존 padding-top:4rem; padding-bottom:4rem; */
-  padding-top: 2rem;    /* ← 4rem → 2rem */
-  padding-bottom: 2rem; /* ← 4rem → 2rem */
-}
-
+/* --------------------------------------------
+   7. 우리들의 이야기 섹션 스타일
+-------------------------------------------- 
 .story-section {
   background-color: #E0E2DF;
-  padding: 1.5rem 1rem;
-}
-.story-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  color: #222;
 }
 
-/* 2단 그리드(.story-content) */
+.story-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
 .story-content {
   display: flex;
   gap: 2rem;
-}
-/* 반응형: 너비 768px 이하일 땐 세로 스택 */
-@media (max-width: 768px) {
-  .story-content {
-    flex-direction: column;
-  }
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* 좌측 피처링 아티클 */
 .featured-article {
-  flex: 0 0 60%;
-  background: #fff;
+  flex: 1 1 500px;
+  background-color: #fff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
 }
+
 .feat-img {
   width: 100%;
-  display: block;
+  height: auto;
 }
+
 .feat-meta {
   font-size: 0.85rem;
-  color: #666;
-  margin: 0.5rem 1.5rem 0;
+  color: #999;
+  margin: 1rem;
 }
+
 .feat-title {
   font-size: 1.75rem;
-  margin: 0.3rem 1.5rem;
+  margin: 0 1rem 1rem;
   color: #222;
 }
+
 .feat-desc {
   font-size: 1rem;
-  line-height: 1.5;
-  margin: 0 1.5rem 1rem;
   color: #555;
+  margin: 0 1rem 1.5rem;
+  line-height: 1.5;
 }
+
 .feat-author {
-  margin-top: auto;
-  padding: 0.5rem 1.5rem;
   display: flex;
   align-items: center;
-  border-top: 1px solid #eee;
+  padding: 1rem;
+  border-top: 1px solid #EEE;
 }
+
 .author-avatar {
   width: 40px;
   height: 40px;
@@ -509,62 +463,336 @@ main {
   object-fit: cover;
   margin-right: 0.75rem;
 }
+
 .author-info .author-name {
+  font-size: 0.95rem;
   font-weight: bold;
-  margin: 0;
-}
-.author-info .author-date {
-  font-size: 0.85rem;
-  color: #888;
-  margin: 0;
+  color: #333;
 }
 
-/* 우측 어사이드 아티클 컨테이너 */
-.aside-articles {
-  flex: 0 0 40%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.author-info .author-date {
+  font-size: 0.8rem;
+  color: #999;
 }
-/* 각 작은 아티클 */
-.aside-article {
-  background: #fff;
+
+/* 어사이드 아티클 */
+/* ======================================================
+   우리들의 이야기 섹션: 피처링 + 어사이드 아티클 레이아웃 조정
+   ====================================================== */
+
+/* (1) .story-content: 좌/우 블록을 2:1 비율로 배치 & 세로 중앙 정렬 */
+.story-content {
+  display: flex;
+  gap: 2rem;            /* 좌/우 영역 사이 간격 */
+  align-items: center;  /* 좌측 featured-article 높이에 맞춰 우측 aside-articles를 세로 중앙 정렬 */
+  /* 만약 가로 여백이 필요하면 좌우 padding 등 추가 */
+}
+
+/* (2) 좌측 피처링 아티클 너비를 전체의 2/3로 설정 */
+.featured-article {
+  flex: 2;              /* flex-grow:2, 우측이 flex:1 하나보다 두 배로 넓음 */
+  background-color: #fff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  padding: 1rem;
-  display: flex;
-  gap: 1rem;
 }
-.aside-img {
-  width: 30%;
-  object-fit: cover;
-  border-radius: 8px;
+
+/* (3) featured-article 안의 이미지 */
+.featured-article .feat-img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
-.aside-meta {
-  font-size: 0.75rem;
-  color: #666;
+
+/* (4) featured-article 텍스트 블록 */
+.featured-article .feat-meta {
+  font-size: 0.85rem;
+  color: #999;
+  margin: 1rem;
 }
-.aside-title {
-  font-size: 1rem;
-  margin: 0.25rem 0;
+.featured-article .feat-title {
+  font-size: 2rem;
+  margin: 0 1rem 1rem;
   color: #222;
 }
-.aside-snippet {
+.featured-article .feat-desc {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 1rem 1.5rem;
+  line-height: 1.5;
+}
+.featured-article .feat-author {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-top: 1px solid #EEE;
+}
+.featured-article .author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.75rem;
+}
+.featured-article .author-info .author-name {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #333;
+}
+.featured-article .author-info .author-date {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* (5) 우측 어사이드 전체 컨테이너 너비를 전체의 1/3로 설정 */
+.aside-articles {
+  flex: 2;               /* 좌측 featured-article의 flex:2에 비해 너비 절반(=전체의 1/3) */
+  display: flex;
+  flex-direction: column;   /* 3개의 aside-article을 위->아래 순서로 쌓기 */
+  justify-content: space-between; /* 3개의 카드가 세로로 골고루 퍼지도록 */
+  gap: 5rem;               /* 카드 간 세로 간격 */
+}
+
+/* (6) 개별 어사이드 카드 레이아웃: 가로로 (이미지 - 텍스트) 배치 */
+.aside-article {
+  display: flex;
+  gap: 1rem;                /* 이미지와 텍스트 사이 간격 */
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;          /* 카드 안쪽 여백 */
+}
+
+/* (7) .aside-img: 고정 크기(약 80×80px)로 설정하고, 모서리 둥글게 */
+.aside-img {
+  flex-shrink: 0;               /* 축소되지 않게 고정 */
+  width: 150px;                  /* 원하는 크기: 80px */
+  height: 150px;                 /* 원하는 크기: 80px */
+  object-fit: cover;            /* 이미지 비율 유지하면서 잘라냄 */
+  border-radius: 8px;           /* 카드 모서리에 맞춰 살짝 둥글게 */
+}
+
+/* (8) .aside-text: 텍스트 영역을 세로 정렬(column)로 쌓고, 내부 여백 부여 */
+.aside-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  /* 제목 위에서부터 쌓기 */
+}
+
+/* (9) .aside-meta: “5 Min read” 스타일*/
+.aside-meta {
   font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+
+/* (10) .aside-title: 제목은 Bold체로, 한 줄이 길어지면 두세 줄까지 감싸기 */
+.aside-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #222;
+  margin: 0 0 0.25rem;
+  line-height: 2.3;
+}
+
+/* (11) .aside-snippet: 요약 문단(한두 줄)*/
+.aside-snippet {
+  font-size: 0.9rem;
+  font-weight: normal;
   color: #555;
   line-height: 1.4;
-  flex: 1;
+  margin: 0 0 1rem;
+  /* 글이 너무 길면 한두 줄만 나머지는 ... 처리하고 싶다면 아래 두 줄 추가: */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;      /* 2줄까지만 보이게 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-.aside-link {
+
+/* (12) .continue-link: 카드 안에서 가장 아래쪽 오른쪽으로 배치 */
+.continue-link {
   font-size: 0.85rem;
   color: #6f856c;
+  font-weight: 500;
+  margin-top: auto;           /* 가능한 맨 아랫줄로 밀어놓기 */
+  align-self: flex-end;       /* 텍스트 블록 오른쪽 끝으로 배치 */
   text-decoration: none;
-  align-self: flex-end;
-  margin-top: auto;
+  transition: color 0.2s;
 }
-.aside-link:hover {
-  text-decoration: underline;
+.continue-link:hover {
+  color: #5e745b;
+}
+
+/* (13) 반응형 예시: 화면이 좁아지면 좌우 대신 세로로 쌓이도록 (선택 사항) */
+@media (max-width: 768px) {
+  .story-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .featured-article {
+    width: 100%;
+  }
+  .aside-articles {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .aside-article {
+    flex-direction: row;  /* 모바일에서도 이미지-텍스트 가로 배치 유지 */
+  }
+  .aside-img {
+    width: 100px;
+    height: 100px;
+  }
+  .aside-title {
+    font-size: 1.2rem;
+  }
+}
+
+
+/* --------------------------------------------
+   8. 신뢰 마크 섹션 스타일
+-------------------------------------------- */
+.trusted-section {
+  background-color: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.trusted-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.trusted-logos {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.trusted-logos img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* --------------------------------------------
+   9. 푸터 스타일
+-------------------------------------------- */
+.site-footer {
+  background-color: #E0E2DF;
+  color: #333;
+  padding: 3rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left {
+  flex: 1 1 300px;
+}
+
+.footer-logo {
+  width: 50px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.footer-desc {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.live-chat-btn {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background-color: #6f856c;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.live-chat-btn:hover {
+  background-color: #5e745b;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-column h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+  color: #333;
+  transition: color 0.2s;
+}
+
+.footer-column ul li a:hover {
+  color: #6f856c;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* 푸터 하단 */
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #DDD;
+  padding-top: 1rem;
+}
+
+.footer-bottom a,
+.footer-bottom span {
+  color: #555;
+  margin: 0 0.75rem;
+  font-size: 0.8rem;
+}
+
+.made-with {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.visily-logo {
+  font-weight: bold;
+  color: #6f856c;
 }
 
 /* ==========================================================================

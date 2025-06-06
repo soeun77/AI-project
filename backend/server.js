@@ -10,6 +10,9 @@ const PORT = 3000;
 
 // CORS 허용
 app.use(cors());
+// images 폴더를 정적(static)으로 공개
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
 // JSON body 파싱 미들웨어 (필요 시)
 app.use(express.json());
 

@@ -13,12 +13,19 @@
         <button id="signupTab">회원가입</button>
       </div>
 
-      <form id="loginForm" class="auth-form">
+      <!--<form id="loginForm" class="auth-form">
         <h2>로그인</h2>
         <input type="text" placeholder="아이디" required />
         <input type="password" placeholder="비밀번호" required />
         <button type="submit">로그인</button>
+      </form> -->
+      <form id="loginForm" class="auth-form">
+        <h2>로그인</h2>
+        <input type="text" id="username" placeholder="아이디" required />
+        <input type="password" id="password" placeholder="비밀번호" required />
+        <button type="submit">로그인</button>
       </form>
+
 
       <form id="signupForm" class="auth-form hidden">
         <h2>회원가입</h2>
@@ -50,6 +57,24 @@
       signupForm.classList.remove('hidden');
       loginForm.classList.add('hidden');
     };
+
+    loginForm.addEventListener('submit', function (e) {
+    e.preventDefault(); // 기본 폼 제출 막기
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // (여기에서 실제 서버와 로그인 검증을 할 수도 있음)
+    // 예시: 아무 값이든 입력하면 통과
+    if (username && password) {
+      // 로그인 성공 → index.html로 이동
+      window.location.href = 'index.html';
+    } else {
+      alert('아이디와 비밀번호를 모두 입력해주세요.');
+    }
+    });
   </script>
+
+
 </body>
 </html>

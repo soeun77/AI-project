@@ -30,23 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
       recContainer.innerHTML = '';
 
       books.forEach((book, index) => {
-        // 디버깅: book[IMAGE_KEY]가 실제로 무엇인지 찍어보기
-        console.log(`[RECOMMEND][${index}]`, book);
+  const imageFile = (book[IMAGE_KEY] || '').trim();  // ← 여기 trim 처리!
+  const card = document.createElement('div');
+  card.className = 'recommend-card';
+  card.innerHTML = `
+    <img src="https://ai-project-delta-seven.vercel.app/images/${imageFile}" alt="${book[TITLE_KEY]} 표지" />
+    <h3>${book[TITLE_KEY]}</h3>
+    <p class="author">${book[AUTHOR_KEY]}</p>
+  `;
+  recContainer.appendChild(card);
+});
 
-        // 만약 IMAGE_KEY가 틀리거나 값이 undefined라면 콘솔에서 undefined로 찍힙니다.
-        // → 콘솔을 보고 IMAGE_KEY 값을 실제 JSON 프로퍼티 이름과 100% 일치시켜야 합니다.
-        console.log('▶ IMAGE 파일명:', book[IMAGE_KEY]);
-
-        const card = document.createElement('div');
-        card.className = 'recommend-card';
-        card.innerHTML = `
-          <img src="https://ai-project-delta-seven.vercel.app/images/${book[IMAGE_KEY].trim()}" alt="${book[TITLE_KEY]} 표지" />
-          <h3>${book[TITLE_KEY]}</h3>
-          <p class="author">${book[AUTHOR_KEY]}</p>
-          
-        `;
-        recContainer.appendChild(card);
-      });
     })
     .catch(err => {
       console.error(err);

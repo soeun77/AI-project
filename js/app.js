@@ -30,16 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
       recContainer.innerHTML = '';
 
       books.forEach((book, index) => {
-  const imageFile = (book[IMAGE_KEY] || '').trim();  // ← 여기 trim 처리!
-  const card = document.createElement('div');
-  card.className = 'recommend-card';
-  card.innerHTML = `
-    <img src="https://ai-project-delta-seven.vercel.app/images/${imageFile}" alt="${book[TITLE_KEY]} 표지" />
-    <h3>${book[TITLE_KEY]}</h3>
-    <p class="author">${book[AUTHOR_KEY]}</p>
-  `;
-  recContainer.appendChild(card);
-});
+        const imageFile = (book[IMAGE_KEY]);
+        const card = document.createElement('div');
+        card.className = 'recommend-card';
+        card.innerHTML = `
+          <img src="https://ai-project-delta-seven.vercel.app/images/${imageFile}" alt="${book[TITLE_KEY]} 표지" />
+          <h3>${book[TITLE_KEY]}</h3>
+          <p class="author">${book[AUTHOR_KEY]}</p>
+        `;
+        recContainer.appendChild(card);
+      });
 
     })
     .catch(err => {

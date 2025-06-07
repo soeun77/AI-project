@@ -9,10 +9,6 @@ module.exports = (req, res) => {
 
   const { pathname } = new URL(req.url, `http://${req.headers.host}`);
 
-  if (pathname.endsWith('/books')) {
-    return res.status(200).json({ success: true, data: books });
-  }
-
   if (pathname.endsWith('/recommendations')) {
     const pool = [...books];
     const count = Math.min(3, pool.length);
@@ -20,8 +16,15 @@ module.exports = (req, res) => {
 
     for (let i = 0; i < count; i++) {
       const index = Math.floor(Math.random() * pool.length);
-      recommendations.push(pool[index]);
+      const book = pool[index];
       pool.splice(index, 1);
+
+      // 오직 필요한 필드만 추출
+      recommendations.push({
+        제목: book['제목'] || '',
+        저자: book['저자'] || '',
+        이미지파일명: book['이미지 파일명'] || ''
+      });
     }
 
     return res.status(200).json({ success: true, recommendations });

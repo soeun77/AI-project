@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 2) 백엔드 엑셀 기반 엔드포인트 호출
-  fetch('http://localhost:3000/api/recommendations')
+  fetch('https://ai-project-delta-seven.vercel.app/api/server.js')
     .then(res => {
       if (!res.ok) throw new Error('추천 도서 데이터를 불러오지 못했습니다.');
       return res.json();
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('div');
         card.className = 'recommend-card';
         card.innerHTML = `
-          <img src="http://localhost:3000/images/${book[IMAGE_KEY].trim()}" alt="${book[TITLE_KEY]} 표지" />
+          <img src="https://ai-project-delta-seven.vercel.app/images/${book[IMAGE_KEY].trim()}" alt="${book[TITLE_KEY]} 표지" />
           <h3>${book[TITLE_KEY]}</h3>
           <p class="author">${book[AUTHOR_KEY]}</p>
           
